@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Project</title>
+    <link rel = "stylesheet" href = "style.css">
+
+</head>
+<body>
+    
+    <!-- create a container to center the calculator on the page-->
+<div class = "container">
+
+    <!--to style in our css file -->
+<div class = "calculator">
+
+    <!--create a form element for calculator input-->
+    <form>
+        <!--create an input field for displaying the calculator input-->
+        <div class = "display"> 
+           
+                <!-- <input type = "text" name = "display" style="width: 70px;height: 100px;"> -->
+
+
+            
+            <input type = "text" name = "display" placeholder="0" style="width: 70px;height: 100px;">
+        </div>
+
+        <!--create button groups for AC, DEL, . and /-->
+        <div class = "row1">
+            <!--create a button to clear the input field-->
+        <input type = "button" value = "AC" onclick = "display.value = '' " class = "operator-del">
+            <!--create a button to delete the last character from the input field-->
+        <!-- <input type = "button" value = "DEL" onclick = "display.value.toString().slice(0,-1)" class = "operator"> slice 0, which is last number and subtract 1 from it -->
+        <input type="button" name="Delete"  value="DEL" OnClick="display.value = display.value.substring(0, display.value.length - 1)" class = "operator-del">
+    
+        
+        <!-- create a . button-->
+        <input type = "button" value = "." onclick = "display.value += '.' " class = "operator">
+        <!-- create a / button-->
+        <input type = "button" value = "÷" onclick = "display.value += '/' " class = "operator">
+         </div>
+
+        <!--create button groups for 7,8,9 and *-->
+        <div class = "row2">
+        <!--create a button 7-->
+        <input type = "button" value = "7" onclick = "display.value += '7' ">
+        <!--create a button 8-->
+        <input type = "button" value = "8" onclick = "display.value += '8' ">
+        <!-- create a button 9-->
+        <input type = "button" value = "9" onclick = "display.value += '9' ">
+        <!-- create a button for multiplication-->
+        <input type = "button" value = "x" onclick = "display.value += '*' " class = "operator">
+        </div>
+
+            <!--create button groups for 4,5,6 and subtraction-->
+            <div class = "row3">
+            <!--create a button 4-->
+            <input type = "button" value = "4" onclick = "display.value += '4' ">
+            <!--create a button 5-->
+            <input type = "button" value = "5" onclick = "display.value += '5' ">
+            <!-- create a button 6-->
+            <input type = "button" value = "6" onclick = "display.value += '6' ">
+            <!-- create a button for subtraction-->
+            <input type = "button" value = "-" onclick = "display.value += '-' " class = "operator">
+            </div>
+    
+            <!--create button groups for 1,2,3 and addition-->
+            <div class = "row4">
+            <!--create a button 1-->
+            <input type = "button" value = "1" onclick = "display.value += '1' ">
+            <!--create a button 2-->
+            <input type = "button" value = "2" onclick = "display.value += '2' ">
+            <!-- create a button 3-->
+            <input type = "button" value = "3" onclick = "display.value += '3' ">
+            <!-- create a button for addition-->
+            <input type = "button" value = "+" onclick = "display.value += '+' " class = "operator">
+            </div>
+
+             <!--create button groups for 00,0 and equals-->
+             <div class = "row5">
+                <!--create a button 00-->
+                <input type = "button" value = "00" onclick = "display.value += '00' ">
+                <!--create a button 0-->
+                <input type = "button" value = "0" onclick = "display.value += '0' ">
+                <!-- create a button for equals sign-->
+                <input type = "button" value = "=" onclick = "display.value = eval(display.value) " class = "equal operator">
+                </div>
+
+
+
+         </div>
+
+
+
+
+
+
+    </form>
+
+
+</div>
+
+
+</div>
+
+
+appendNumber(number) {
+    if (number === '.' && this.currentOperand.includes('.')) return
+    this.currentOperand = this.currentOperand.toString() + number.toString()
+  }
+
+</body>
+</html>
